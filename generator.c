@@ -12,6 +12,7 @@
 
 #include <stdlib.h>
 #include <stdio.h>
+#include <time.h>
 
 int	do_parsing(int ac, char **av, int *min, int *max)
 {
@@ -32,10 +33,10 @@ int	do_parsing(int ac, char **av, int *min, int *max)
 		*max = atoi(av[1]);
 	if (lst_len <= 0)
 		exit(printf("error: must generate at least one number\n"));
+	if (*min < 0)
+		exit(printf("error: can only generate positive numbers\n"));
 	if (*max - *min < lst_len)
 		exit(printf("error: range can't fit %d unique numbers\n", lst_len));
-	if (min < 0)
-		exit(printf("error: can only generate positive numbers\n"));
 	return (lst_len);
 }
 
@@ -89,7 +90,7 @@ int	main(int ac, char **av)
 	len = do_parsing(ac, av, &min, &max);
 	gen = calloc(sizeof (int), len + 1);
 	gen[len] = max + 1;
-	sranddev();
+	srand(time(0));
 	while (len)
 	{
 		gen[len - 1] = (rand() % (max - min)) + min;
