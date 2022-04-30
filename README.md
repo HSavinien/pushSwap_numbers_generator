@@ -11,10 +11,13 @@ where :
 - `min|max` is either the upper or lower limit of your range;
 - `max` is the upper limit of your range;
 
-If only one argument is specified, the range will default to [0-lst_len];
+If only one argument is specified, the range will default from 0 to lst_len;
+
 If two arguments are specified, the second argument indicate the upper limit of the range, and le lower limit default to 0;
+
 If all three arguments are specified, the second is the lower limit of range, and the third the upper one.
-as of now, negative numbers are unsuported. it might get added in the future.
+
+As of now, generating negative number is unsuported. as such, both range delimiter must be positive numbers.
 
 ### how to use
 used alone, the program will display the generated list on std_out, with each numbers separated by a single space, and folowed by a newline. this formating should be useable as is by any push_swap.
