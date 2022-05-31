@@ -6,7 +6,7 @@
 /*   By: tmongell <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/04/29 20:19:32 by tmongell          #+#    #+#             */
-/*   Updated: 2022/04/30 17:26:25 by tmongell         ###   ########.fr       */
+/*   Updated: 2022/05/31 15:00:17 by tmongell         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -58,28 +58,6 @@ int	is_duplicated(int nb, int *gen, int end)
 	return (1);
 }
 
-/*
-int	main(int ac, char **av)
-{
-	int *tab;
-	int	i;
-
-	if (ac == 1)
-		return(0);
-	tab = calloc(sizeof (int), ac + 1);
-	tab[ac] = 99;
-	i = 1;
-	while (i < ac)
-	{	
-		tab[i - 1] = atoi(av[i]);
-		i ++;
-	}
-	i = 0;
-	while (i < ac - 1)
-		printf("%d ", tab[i ++]);
-	printf("\nis %d duplicated : %d\n",tab[0], is_duplicated(tab[0], tab, 99));
-}
-*/
 int	main(int ac, char **av)
 {
 	int	len;
